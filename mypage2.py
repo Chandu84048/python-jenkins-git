@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, abort, request, redirect, url_for
 from model import db, save_data
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 
 @app.route("/")
@@ -43,6 +43,6 @@ def add_new_product():
         return render_template("add_product.html")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.secret_key = "secret123"
     app.run(port=8001, debug=True)
